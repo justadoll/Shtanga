@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>::Bboard main::</title>
+  </head>
+    <body>
+      <h1>Объявления</h1>
+      <div>
+      {% for bb in bbs %}
+      <h3>{{bb.title}}</h3>
+      <p>{{bb.content}}</p>
+      <p>{{bb.price}}$</p>
+      <p>{{bb.date|date:"d.m.Y H:i:s"}}</p>
+      </div>
+      {% endfor %}
+    </body>
+</html>
+
