@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>::Bboard main::</title>
+  </head>
+    <body>
+      <h1>Main page</h1>
+        <div>
+        <a href="/bboard/">Main</a>
+        {% for rubric in rubrics %}
+        <a href="/bboard/{{ rubric.pk }}/">{{ rubric.name }}</a>
+        {% endfor %}
+        </div>
+
+      <div>
+      {% for bb in bbs %}
+      <h4>{{bb.title}}</h4>
+      <p>{{ bb.content }}</p>
+      <p><a href="/bboard/{{ bb.rubric.pk }}/">{{ bb.rubric.name }}</a></p>
+      <p>{{bb.price}}$</p>
+      <p>{{bb.date|date:"d.m.Y H:i:s"}}</p>
+      </div>
+      {% endfor %}
+    </body>
+</html>
+

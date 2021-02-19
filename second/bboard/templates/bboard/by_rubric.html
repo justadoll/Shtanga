@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <title>:: {{ current_rubric.name }} Ads ::</title>
+  </head>
+
+    <body>
+    <h1>Ads</h1>
+    <h2>Rubric: {{ current_rubric.name  }}</h2>
+    <div>
+      <a href="/bboard/">Main page</a>
+      {% for rubric in rubrics %}
+      <p><a href="/bboard/{{ rubric.pk }}/">{{ rubric.name }}</a></p>
+      {% endfor %}
+    </div>
+
+    {% for bb in bbs %}
+    <div>
+      <h2>{{ bb.title }}</h2>
+      <p>{{ bb.content }}</p>
+      <p>{{ bb.price }}$</p>
+      <p>{{ bb.date|date:"d.m.Y H:i:s" }}</p>
+    </div>
+    {% endfor %}
+
+    </body>
+</html>
